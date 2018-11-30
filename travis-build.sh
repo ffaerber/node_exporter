@@ -17,9 +17,9 @@ if [ "$ARCH" == "amd64" ]; then
   touch "$QEMU"  # HACK to fake a qemu-amd64-static
 fi
 
-wget https://github.com/prometheus/node_exporter/releases/download/$BIN_SOURCE.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/$RELEASE/$BIN_SOURCE.tar.gz
 tar -xvf ./$BIN_SOURCE.tar.gz
-mv ./$BIN_SOURCE node_exporter
+mv ./$BIN_SOURCE/node_exporter node_exporter
 
 if [ -d tmp ]; then
   docker rm build

@@ -6,9 +6,9 @@ services:
 # https://github.com/prometheus/node_exporter/releases
 env:
   matrix:
-    - ARCH=arm   QEMU=qemu-arm-static     BASE_IMAGE=arm32v7/debian:jessie-slim  BIN_SOURCE=v0.17.0-rc.0/node_exporter-0.17.0-rc.0.linux-armv7
-    - ARCH=arm64 QEMU=qemu-aarch64-static BASE_IMAGE=arm64v8/debian:jessie-slim  BIN_SOURCE=v0.17.0-rc.0/node_exporter-0.17.0-rc.0.linux-arm64
-    - ARCH=amd64 QEMU=qemu-fake-static    BASE_IMAGE=amd64/debian:jessie-slim    BIN_SOURCE=v0.17.0-rc.0/node_exporter-0.17.0-rc.0.linux-amd64
+    - ARCH=arm   QEMU=qemu-arm-static     BASE_IMAGE=arm32v7/debian:jessie-slim  RELEASE=v0.17.0-rc.0 BIN_SOURCE=node_exporter-0.17.0-rc.0.linux-armv7
+    - ARCH=arm64 QEMU=qemu-aarch64-static BASE_IMAGE=arm64v8/debian:jessie-slim  RELEASE=v0.17.0-rc.0 BIN_SOURCE=node_exporter-0.17.0-rc.0.linux-arm64
+    - ARCH=amd64 QEMU=qemu-fake-static    BASE_IMAGE=amd64/debian:jessie-slim    RELEASE=v0.17.0-rc.0 BIN_SOURCE=node_exporter-0.17.0-rc.0.linux-amd64
 
 script:
   - ./travis-build.sh
