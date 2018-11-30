@@ -6,3 +6,5 @@ FROM ${BASE_IMAGE}
 
 ADD ${QEMU} /usr/bin/${QEMU}
 ADD node_exporter /usr/local/bin/
+
+CMD ['node_exporter']
